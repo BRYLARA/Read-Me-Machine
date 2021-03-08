@@ -1,7 +1,7 @@
 # Read Me Machine 
 
 ## Description 
-allows users to create a read me file from their terminal
+Read Me Machine allows users to create a read me file straight from their terminal
 ## Table of Contents 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -20,4 +20,4 @@ its free!
 ## Tests 
 undefined
 ## Questions 
-Please direct any questions to [undefined](mailto:brylaraanthony@gmail.com?subject=[GitHub]) and find my github profile here: https://github.com/undefined
+Please direct any questions to (mailto:brylaraanthony@gmail.com) and find my github profile here: https://github.com/undefined
