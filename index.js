@@ -1,10 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const util = require('util');
-// const Choices = require("inquirer/lib/objects/choices");
-// const { type } = require("os");
-// const path = require("path");
-// const generateMarkdown = require("../homework 9/markdown");
+const util = require('util');
+const Choices = require("inquirer/lib/objects/choices");
+const generateMarkdown = require("../homework 9/markdown");
 const generatorMarkdown = require("./markdown")
 
 
@@ -30,12 +28,6 @@ inquirer
         message: "What is your applications name",
         name: 'title'
     },
-    // {
-    //     type:'list',
-    //     messages: 'What licenses do you need for your project?'
-    //     choices: ["APACHE 2.0", "MIT", "BSD 3", "NONE"],
-    //     name: 'license'
-    // },
     {
         type: "input",
         message: "What command should be ran to install dependencies?",
@@ -61,18 +53,6 @@ inquirer
     ])
 
 // // function that writes the README file below
-// function writeToFile(fileName, data) {
-//     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-//   }
-//   function init() {
-//     inquirer.prompt(questions).then((inquirerResponses) => {
-//       console.log("Generating ...");
-//       writeToFile("README.md", generateMarkdown({ ...inquirerResponses }));
-//     });
-//   }
-  
-//   // function call to initialize program
-//   init();
 function writeToFile(fileName, data) {
 
     fs.writeFile("./demo/"+fileName, data, function(err) {
