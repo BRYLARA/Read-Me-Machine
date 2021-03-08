@@ -1,9 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require('util');
-const Choices = require("inquirer/lib/objects/choices");
-const generateMarkdown = require("../homework 9/markdown");
-const generatorMarkdown = require("./markdown")
+const markDown = require("./markdown")
 
 
 inquirer
@@ -51,30 +48,25 @@ inquirer
         message: "What should the user know about contributing to this repository?",
       },
     ])
+    
+.then((resData) => {
+  //Run Generate Markdown function and pass response data in
+  let testData = markDown(resData)
 
-// // function that writes the README file below
-function writeToFile(fileName, data) {
+  //Calling writeToFile
+  writeToFile(testData)
+}
 
-    fs.writeFile("./demo/"+fileName, data, function(err) {
-      if (err) {
-        return console.log(err);
-      }
-      console.log ("Successfully wrote: " + fileName);
-    })
-    
-    }
-    
-    
-    // initialization function
-    function init() {
-      inquirer.prompt(questions)
-      .then(function(data) {
-        writeToFile("DemoREADME.md", generatorMarkdown(data));
-      })
-    }
-    
-    
-    // run the app
-    init();
+)
+;
+
+// TODO: Create a function to write README file - maybe create an output folder.
+function writeToFile(data) {
+fs.writeFile('README.md', data, function (err) {
+if (err) throw err;
+console.log('README.md has been generated');
+});
+}
+
 
 
